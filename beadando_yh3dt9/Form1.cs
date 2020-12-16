@@ -17,24 +17,16 @@ namespace beadando_yh3dt9
     public partial class Form1 : Form
     {
         BindingList<StudentData> Students = new BindingList<StudentData>();
-        List<StudentData> Huzottnev = new List<StudentData>();
-        List<string> Ajandek = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
-            
-
-            
-            //kereso.Text = Students[0].Name;
 
             listBox1.DataSource = Students;
-            listBox1.DisplayMember = "Name";
-
-            
-
+            listBox1.DisplayMember = "Name";      
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  //Beolvasó gomb
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = Application.StartupPath;
@@ -46,7 +38,6 @@ namespace beadando_yh3dt9
             StreamReader sr = new StreamReader("Students.xml");
 
             var xmlString = sr.ReadToEnd();
-            //MessageBox.Show(xmlString);
 
             var xml = new XmlDocument();
             xml.LoadXml(xmlString);
@@ -75,15 +66,13 @@ namespace beadando_yh3dt9
                 var giftElement = (XmlElement)element.ChildNodes[3];
                 if (giftElement == null)
                     continue;
-                student.Gift = int.Parse(giftElement.InnerText);
-                               
+                student.Gift = int.Parse(giftElement.InnerText);                               
             }
-
         }
         
 
          
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)  //Sorsoló gomb
         {
             var letszam = Students.Count();           
             var rnd = new Random();
@@ -93,10 +82,9 @@ namespace beadando_yh3dt9
             {
                 Students[i].Pair = sorsolas[i];
             }
-
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)  //Exportáló gomb
         {          
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = Application.StartupPath;
@@ -116,20 +104,16 @@ namespace beadando_yh3dt9
 
                 }
             }
-
-
-
-
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //Kit húzott gomb
         {
             int othuzta = new int() ;
             othuzta = Students[listBox1.SelectedIndex].Pair -1;
             MessageBox.Show(Students[listBox1.SelectedIndex].Name + " őt húzta: " + Students[othuzta].Name);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) //Ajándékötletet adó gomb 
         {
             int eztkapja = new int();
             eztkapja = Students[listBox1.SelectedIndex].Gift;
