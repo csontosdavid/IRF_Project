@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.adatbetoltes = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.sorsolas = new System.Windows.Forms.Button();
+            this.exportalas = new System.Windows.Forms.Button();
+            this.kithuzott = new System.Windows.Forms.Button();
+            this.ajandekotlet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // adatbetoltes
             // 
-            this.button1.Location = new System.Drawing.Point(762, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(369, 94);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Adatok betöltése";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.adatbetoltes.Location = new System.Drawing.Point(762, 12);
+            this.adatbetoltes.Name = "adatbetoltes";
+            this.adatbetoltes.Size = new System.Drawing.Size(369, 94);
+            this.adatbetoltes.TabIndex = 0;
+            this.adatbetoltes.Text = "Adatok betöltése";
+            this.adatbetoltes.UseVisualStyleBackColor = true;
+            this.adatbetoltes.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
@@ -55,57 +55,57 @@
             this.listBox1.Size = new System.Drawing.Size(630, 686);
             this.listBox1.TabIndex = 1;
             // 
-            // button2
+            // sorsolas
             // 
-            this.button2.Location = new System.Drawing.Point(762, 113);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(369, 94);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Sorsolás";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.sorsolas.Location = new System.Drawing.Point(762, 113);
+            this.sorsolas.Name = "sorsolas";
+            this.sorsolas.Size = new System.Drawing.Size(369, 94);
+            this.sorsolas.TabIndex = 2;
+            this.sorsolas.Text = "Sorsolás";
+            this.sorsolas.UseVisualStyleBackColor = true;
+            this.sorsolas.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // exportalas
             // 
-            this.button3.Location = new System.Drawing.Point(762, 213);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(369, 94);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Adatok exportálása";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.exportalas.Location = new System.Drawing.Point(762, 213);
+            this.exportalas.Name = "exportalas";
+            this.exportalas.Size = new System.Drawing.Size(369, 94);
+            this.exportalas.TabIndex = 4;
+            this.exportalas.Text = "Adatok exportálása";
+            this.exportalas.UseVisualStyleBackColor = true;
+            this.exportalas.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // kithuzott
             // 
-            this.button4.Location = new System.Drawing.Point(12, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(369, 94);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Kit húzott?";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.kithuzott.Location = new System.Drawing.Point(12, 12);
+            this.kithuzott.Name = "kithuzott";
+            this.kithuzott.Size = new System.Drawing.Size(369, 94);
+            this.kithuzott.TabIndex = 5;
+            this.kithuzott.Text = "Kit húzott?";
+            this.kithuzott.UseVisualStyleBackColor = true;
+            this.kithuzott.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // ajandekotlet
             // 
-            this.button5.Location = new System.Drawing.Point(387, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(369, 94);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Ajándékötlet keresés";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.ajandekotlet.Location = new System.Drawing.Point(387, 12);
+            this.ajandekotlet.Name = "ajandekotlet";
+            this.ajandekotlet.Size = new System.Drawing.Size(369, 94);
+            this.ajandekotlet.TabIndex = 6;
+            this.ajandekotlet.Text = "Ajándékötlet keresés";
+            this.ajandekotlet.UseVisualStyleBackColor = true;
+            this.ajandekotlet.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 972);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ajandekotlet);
+            this.Controls.Add(this.kithuzott);
+            this.Controls.Add(this.exportalas);
+            this.Controls.Add(this.sorsolas);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.adatbetoltes);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -114,12 +114,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button adatbetoltes;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button sorsolas;
+        private System.Windows.Forms.Button exportalas;
+        private System.Windows.Forms.Button kithuzott;
+        private System.Windows.Forms.Button ajandekotlet;
     }
 }
 
