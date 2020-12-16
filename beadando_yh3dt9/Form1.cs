@@ -17,13 +17,13 @@ namespace beadando_yh3dt9
     public partial class Form1 : Form
     {
         BindingList<StudentData> Students = new BindingList<StudentData>();
-
+        
 
         public Form1()
         {
             InitializeComponent();
             
-            
+
             
             //kereso.Text = Students[0].Name;
 
@@ -81,16 +81,47 @@ namespace beadando_yh3dt9
             }
 
         }
-
+        
+         
         private void button2_Click(object sender, EventArgs e)
         {
             var letszam = Students.Count();           
             var rnd = new Random();
-            var randomNumbers = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();
-            listBox1.DataSource = randomNumbers;
+            var sorsolas = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();
+            foreach (var student in Students)
+            {
+                student.Pair = sorsolas;
+            }
+                        
+            
         }
 
-        
-        
+        private void button3_Click(object sender, EventArgs e)
+        {          
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+            {
+                foreach (var student in Students)
+                {
+                    sw.Write(student.Name);
+                    sw.Write(" őt húzta: ");
+                    sw.Write(student.Pair);
+                    sw.WriteLine();
+
+                }
+            }
+
+
+
+
+        }
+
+
     }
 }

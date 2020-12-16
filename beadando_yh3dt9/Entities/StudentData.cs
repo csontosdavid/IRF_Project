@@ -13,7 +13,7 @@ namespace beadando_yh3dt9.Entities
         public string Address { get; set; }
         public int Gift { get; set; }
 
-        public int Pair { get; set; }
+        public List<int> Pair { get; set; }
 
     }
 }
