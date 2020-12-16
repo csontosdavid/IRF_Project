@@ -53,6 +53,7 @@ namespace beadando_yh3dt9
 
             foreach (XmlElement element in xml.DocumentElement)
             {
+                
                 var student = new StudentData();
                 Students.Add(student);
 
@@ -76,7 +77,22 @@ namespace beadando_yh3dt9
                     continue;
                 student.Gift = int.Parse(giftElement.InnerText);
 
+                
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var letszam = Students.Count();
+            int[] huzas = new int[letszam];
+            Random r = new Random();
+            for (int i = 0; i < letszam; ++i)
+            {
+                huzas[i] = r.Next(0, 100);
+            }
+            MessageBox.Show(huzas[1].ToString());
+            MessageBox.Show(Students[1].Name);
 
         }
     }
