@@ -17,8 +17,8 @@ namespace beadando_yh3dt9
     public partial class Form1 : Form
     {
         BindingList<StudentData> Students = new BindingList<StudentData>();
-        List<StudentData> huzottnev = new List<StudentData>();
-
+        List<StudentData> Huzottnev = new List<StudentData>();
+        List<string> Ajandek = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -87,16 +87,12 @@ namespace beadando_yh3dt9
         {
             var letszam = Students.Count();           
             var rnd = new Random();
-            var sorsolas = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();           
-            for (int i = 0; i < letszam; i++)
+            var sorsolas = Enumerable.Range(0, letszam-1).OrderBy(x => rnd.Next()).Take(letszam).ToList();
+            MessageBox.Show("Sorsolás megtörtént!");
+            for (int i = 0; i < letszam-1; i++)
             {
                 Students[i].Pair = sorsolas[i];
             }
-            //for (int i = 0; i < letszam; i++)
-            //{
-            //    huzottnev[i] = Students[Students[i].Pair].Name;
-            //}
-
 
         }
 
@@ -115,7 +111,7 @@ namespace beadando_yh3dt9
                 {
                     sw.Write(student.Name);
                     sw.Write(" őt húzta: ");
-                    sw.Write(student.Pair);
+                    sw.Write(Students[student.Pair].Name);
                     sw.WriteLine();
 
                 }
@@ -131,6 +127,13 @@ namespace beadando_yh3dt9
             int othuzta = new int() ;
             othuzta = Students[listBox1.SelectedIndex].Pair -1;
             MessageBox.Show(Students[listBox1.SelectedIndex].Name + " őt húzta: " + Students[othuzta].Name);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int eztkapja = new int();
+            eztkapja = Students[listBox1.SelectedIndex].Pair - 1;
+
         }
     }
 }
