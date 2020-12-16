@@ -132,7 +132,14 @@ namespace beadando_yh3dt9
         private void button5_Click(object sender, EventArgs e)
         {
             int eztkapja = new int();
-            eztkapja = Students[listBox1.SelectedIndex].Pair - 1;
+            eztkapja = Students[listBox1.SelectedIndex].Gift;
+            if (eztkapja == 1) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Bögrét szeretnekapni!");
+            else if (eztkapja == 2) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Labdát szeretne kapni!");
+            else if (eztkapja == 3) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Puzzle-t szeretne kapni!");
+            else if (eztkapja == 4) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Csokit szeretne kapni");
+            else if (eztkapja == 5) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Játékbabát szeretne kapni");
+            else if (eztkapja == 6) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Kisautót szeretne kapni");
+            else if (eztkapja == 7) MessageBox.Show(Students[listBox1.SelectedIndex].Name + " Virgácsot szeretne kapni");
 
         }
     }
