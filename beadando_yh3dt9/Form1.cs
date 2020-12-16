@@ -22,13 +22,13 @@ namespace beadando_yh3dt9
         public Form1()
         {
             InitializeComponent();
-
+            
             
             
             //kereso.Text = Students[0].Name;
 
-            listBox1.DataSource = Students;
-            listBox1.DisplayMember = "Name";
+            //listBox1.DataSource = Students;
+            //listBox1.DisplayMember = "Name";
 
             
 
@@ -84,16 +84,13 @@ namespace beadando_yh3dt9
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var letszam = Students.Count();
-            int[] huzas = new int[letszam];
-            Random r = new Random();
-            for (int i = 0; i < letszam; ++i)
-            {
-                huzas[i] = r.Next(0, 100);
-            }
-            MessageBox.Show(huzas[1].ToString());
-            MessageBox.Show(Students[1].Name);
-
+            var letszam = Students.Count();           
+            var rnd = new Random();
+            var randomNumbers = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();
+            listBox1.DataSource = randomNumbers;
         }
+
+        
+        
     }
 }
