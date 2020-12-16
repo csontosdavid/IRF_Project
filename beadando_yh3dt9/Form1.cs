@@ -17,18 +17,18 @@ namespace beadando_yh3dt9
     public partial class Form1 : Form
     {
         BindingList<StudentData> Students = new BindingList<StudentData>();
-        
+        List<StudentData> huzottnev = new List<StudentData>();
 
         public Form1()
         {
             InitializeComponent();
-            List<StudentData> valami = new List<StudentData>();
+            
 
             
             //kereso.Text = Students[0].Name;
 
-            //listBox1.DataSource = Students;
-            //listBox1.DisplayMember = "Name";
+            listBox1.DataSource = Students;
+            listBox1.DisplayMember = "Name";
 
             
 
@@ -76,8 +76,7 @@ namespace beadando_yh3dt9
                 if (giftElement == null)
                     continue;
                 student.Gift = int.Parse(giftElement.InnerText);
-
-                
+                               
             }
 
         }
@@ -88,14 +87,17 @@ namespace beadando_yh3dt9
         {
             var letszam = Students.Count();           
             var rnd = new Random();
-            var sorsolas = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();
-            listBox1.DataSource = sorsolas;
+            var sorsolas = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();           
             for (int i = 0; i < letszam; i++)
             {
                 Students[i].Pair = sorsolas[i];
             }
-                                 
-            
+            //for (int i = 0; i < letszam; i++)
+            //{
+            //    huzottnev[i] = Students[Students[i].Pair].Name;
+            //}
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -124,7 +126,11 @@ namespace beadando_yh3dt9
 
         }
 
-       
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int othuzta = new int() ;
+            othuzta = Students[listBox1.SelectedIndex].Pair -1;
+            MessageBox.Show(Students[listBox1.SelectedIndex].Name + " őt húzta: " + Students[othuzta].Name);
+        }
     }
 }

@@ -81,8 +81,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(369, 94);
             this.button4.TabIndex = 5;
-            this.button4.Text = "Ajándékötlet Keresése";
+            this.button4.Text = "Kit húzott?";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -90,7 +91,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(369, 94);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Ajándékozott Keresése";
+            this.button5.Text = "Ajándékötlet keresés";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // Form1
