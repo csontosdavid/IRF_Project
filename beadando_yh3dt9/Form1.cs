@@ -22,8 +22,7 @@ namespace beadando_yh3dt9
         public Form1()
         {
             InitializeComponent();
-            void Layout()
-            {
+            
                 Label resztvevok = new Label()
                 {
                     Width = 100,
@@ -81,14 +80,52 @@ namespace beadando_yh3dt9
 
                 ListBox tanulok = new ListBox()
                 {
-                    Width = 100,
+                    Width = 500,
                     Height = 500,
                     Location = new Point(20, 80)
                 };
                 this.Controls.Add(tanulok);
-            }
-            Layout();
+            
+            
 
+            StreamReader sr = new StreamReader("Students.xml");
+           
+            var xmlString = sr.ReadToEnd();
+            //MessageBox.Show(xmlString);
+
+            var xml = new XmlDocument();
+            xml.LoadXml(xmlString);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var student = new StudentData();
+                Students.Add(student);
+
+                var idElement = (XmlElement)element.ChildNodes[0];
+                if (idElement == null)
+                    continue;
+                student.ID = int.Parse(idElement.InnerText);
+
+                var nameElement = (XmlElement)element.ChildNodes[1];
+                    if (nameElement == null)
+                        continue;
+                    student.Name = nameElement.InnerText;
+
+                    var addressElement = (XmlElement)element.ChildNodes[2];
+                    if (addressElement == null)
+                        continue;
+                    student.Address = addressElement.InnerText;
+
+                var giftElement = (XmlElement)element.ChildNodes[3];
+                if (giftElement == null)
+                    continue;
+                student.Gift = int.Parse(giftElement.InnerText);
+
+            }
+            //kereso.Text = Students[0].Name;
+
+            tanulok.DataSource = Students;
+            tanulok.DisplayMember = "Name";
 
         }
 
