@@ -22,7 +22,7 @@ namespace beadando_yh3dt9
         public Form1()
         {
             InitializeComponent();
-            
+            List<StudentData> valami = new List<StudentData>();
 
             
             //kereso.Text = Students[0].Name;
@@ -82,17 +82,19 @@ namespace beadando_yh3dt9
 
         }
         
+
          
         private void button2_Click(object sender, EventArgs e)
         {
             var letszam = Students.Count();           
             var rnd = new Random();
             var sorsolas = Enumerable.Range(1, letszam).OrderBy(x => rnd.Next()).Take(letszam).ToList();
-            foreach (var student in Students)
+            listBox1.DataSource = sorsolas;
+            for (int i = 0; i < letszam; i++)
             {
-                student.Pair = sorsolas;
+                Students[i].Pair = sorsolas[i];
             }
-                        
+                                 
             
         }
 
@@ -122,6 +124,7 @@ namespace beadando_yh3dt9
 
         }
 
+       
 
     }
 }
